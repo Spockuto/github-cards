@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p id = "shit"></p>
+	<button id="button" onclick="Follow()">Follow</button>
+	<script type="text/javascript">
+		
+		function Follow(){
+			if (document.getElementById("button").innerHTML == "Follow"){
+			
+				var xmlHttp = new XMLHttpRequest(); 
+        		var mimeType = "text/plain";  
+      		
+      			xmlHttp.open('GET', 'https://github.com/login/oauth/authorize', true);  
+    			xmlHttp.send(null);
+    			var statusCode = xmlHttp.status ;
+    			document.getElementById("shit").innerHTML = xmlHttp.responseText;
+    		}
+   		}
+   	</script> 
+</body>
+</html>
